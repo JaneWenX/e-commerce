@@ -10,8 +10,14 @@ const {getCategories,getCategory} = require('./handler_category')
 const {getCart, postCart,deleteCart} = require('./handler_cart')
 const {getCompanies,getCompanyById,} = require('./handler_company')
 const {getOrderHistory,postOrderHistory} = require('./handler_history')
-const PORT = 4000; // port to run the server on
+// const PORT = 4000; // port to run the server on
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 4000;
+}
+
+app.listen(port);
 // create the server
 express()
   .use(function(req, res, next) {
