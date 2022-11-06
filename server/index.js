@@ -17,7 +17,7 @@ if (port == null || port == "") {
   port = 4000;
 }
 
-app.listen(port);
+// app.listen(port);
 // create the server
 express()
   .use(function(req, res, next) {
